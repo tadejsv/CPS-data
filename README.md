@@ -4,7 +4,7 @@ This repository contains two notebooks, which you can open here on GitHub to qui
 
 The `.csv` files contain the tables produced by these two notebooks. Below I paste instructions on how to get these notebooks running on a (linux) server.
 
-# Installing Anaconda
+## Installing Anaconda
 Or Miniconda, to be precise. We just follow the steps [here](https://gist.github.com/arose13/fcc1d2d5ad67503ba9842ea64f6bac35):
 ```bash
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
