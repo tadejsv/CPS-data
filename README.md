@@ -1,4 +1,4 @@
-This repository contains two notebooks, which you can open here on GitHub to quickly see the results:
+This repository contains two notebooks, which you can open here on GitHub (try it!) to quickly see the results:
 - `CPS.ipynb`
 - `Census.ipynb`
 
