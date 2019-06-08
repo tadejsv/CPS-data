@@ -7,22 +7,17 @@ The `.csv` files contain the tables produced by these two notebooks. Below I pas
 ## Installing Anaconda
 Or Miniconda, to be precise. We just follow the steps [here](https://gist.github.com/arose13/fcc1d2d5ad67503ba9842ea64f6bac35):
 ```bash
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-chmod +x Miniconda3-latest-Linux-x86_64.sh
-./Miniconda3-latest-Linux-x86_64.sh
-rm ./Miniconda3-latest-Linux-x86_64.sh
+curl https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -o miniconda.sh
+chmod +x miniconda.sh
+./miniconda.sh -b -p ~/miniconda3
+rm ./miniconda.sh
 ```
 
-Due to some strange bug in miniconda installation, `PATH` is not set correctly. To fix this, execute
+After that we need to make sure the terminal can execute conda commands. To do this, execute
 ```
-nano ~/.bash_profile
-```
-
-and make sure that it contains 
-```
-PATH=$PATH:$HOME/miniconda3/bin
-```
-So basically change `miniconda` to `miniconda3`. Log out, log in and you are ready to `conda` :)
+echo ". ~/miniconda3/etc/profile.d/conda.sh" >> ~/.bashrc
+``` 
+Finally, reload the bash with `. ~/.bashrc` and you are ready to `conda` :)
 
 A handy thing is to add `conda-forge` to conda channels, since a lot of packages are availible through it (so we can aviod `pip`):
 ```
@@ -38,11 +33,11 @@ conda create -n main pandas jupyterlab seaborn requests
 ```
 Once this is done, we activate the environment with
 ```
-source activate main
+conda activate main
 ```
 and when we want to leave it we just enter
 ```
-source deactivate
+conda deactivate
 ```
 
 Here's how to install packages: first, activate your environment (as shown above). Then, if we want to, for example, install `scipy`, do:
